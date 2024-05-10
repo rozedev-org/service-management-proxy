@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-management-proxy
+  namespace: service-management
+  labels:
+    app: service-management-proxy
+spec:
+  selector:
+    matchLabels:
+      name: service-management-proxy-pod
+      app: service-management-proxy
+  replicas: 1
+  revisionHistoryLimit: 0
+  template:
+    metadata:
+      name: service-management-proxy-pod
+      labels:
+        name: service-management-proxy-pod
+        app: service-management-proxy
+    spec:
+      containers:
+        - name: service-management-proxy
+          image: jcdev.online:32000/service-management-proxy
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          # resources:
+          #   requests:
+          #     memory: '200Mi'
+          #     cpu: '100m'
+          #   limits:
+          #     memory: '500Mi'
+          #     cpu: '200m'
+

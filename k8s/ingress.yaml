@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: service-management
+  name: service-management-ingress
+  annotations:
+   cert-manager.io/cluster-issuer: lets-encrypt
+spec:
+ tls:
+ - hosts:
+   - jcdev.online
+ rules:
+ - host: registry.jcdev.online
+   http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: service-management-proxy-svc
+            port:
+              number: 80
+     
+
+
+    
+    
