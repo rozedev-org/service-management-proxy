@@ -10,7 +10,7 @@ spec:
  - hosts:
    - jcdev.online
  rules:
- - host: registry.jcdev.online
+ - host: jcdev.online
    http:
       paths:
       - path: /
