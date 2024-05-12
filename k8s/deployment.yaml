@@ -24,7 +24,7 @@ spec:
           image: jcdev.online:32000/service-management-proxy
           imagePullPolicy: Always
           ports:
-            - containerPort: 5000
+            - containerPort: 80
           # resources:
           #   requests:
           #     memory: '200Mi'

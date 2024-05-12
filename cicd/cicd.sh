@@ -23,9 +23,9 @@ echo "Empuje de la imagen de Docker completado con éxito."
 
 # Desplegar en Kubernetes
 echo "Iniciando despliegue en Kubernetes..."
-kubectl apply -k ../k8s/remote || handle_error "despliegue 1"
-kubectl set image deployment/$appName $appName=$image -n alerti || handle_error "despliegue 2"
-kubectl rollout restart deployment/$appName -n alerti || handle_error "despliegue 3"
+kubectl apply -k ../k8s || handle_error "despliegue 1"
+kubectl set image deployment/$appName $appName=$image -n service-management || handle_error "despliegue 2"
+kubectl rollout restart deployment/$appName -n service-management || handle_error "despliegue 3"
 echo "Despliegue en Kubernetes completado con éxito."
 
 echo "Todas las acciones se completaron con éxito."
