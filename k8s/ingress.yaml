@@ -9,6 +9,7 @@ spec:
  tls:
  - hosts:
    - jcdev.online
+   secretName: jcdev-online-ingress-tls
  rules:
  - host: jcdev.online
    http:
